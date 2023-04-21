@@ -20,4 +20,5 @@ Here are some screenshots of the app:
 Each user has a profile page with their photo:
 
 ![User photo](/images/user1.jpg "A photo of user 1")
+
 ![User photo with alt text](/images/user2.jpg "A photo of user 2" alt="User 2 profile picture")
