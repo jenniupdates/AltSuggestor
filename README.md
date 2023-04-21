@@ -11,7 +11,6 @@ Welcome to my project!
 
 ![](/images/hoyoung.png "A screenshot of Hoyoung")
 ![](/images/phantom.png "A screenshot of Phantom")
-![](/images/nightlord.png "A screenshot of Night Lord")
 
 ### Here are some inline images with alt text
 ![Kain](/images/kain.png "A screenshot of Kain" )
