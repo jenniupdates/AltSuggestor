@@ -10,9 +10,9 @@
 ![alt_text](relative_or_absolute_path "description")
 `
 
-    - ! to indicate an inline image
-    - [] for alternate text, brackets must exist, but its contents can be empty
-    - (path) is required, description is optional
+[x] ! to indicate an inline image
+[x] [] for alternate text, brackets must exist, but its contents can be empty
+[x] (path) is required, description is optional
 
 
 ## Image gallery
