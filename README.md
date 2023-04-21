@@ -5,6 +5,7 @@
 
 ## Assumptions
 1. The standard markdown format for inline images and alt text is as follows:
+
     `
     ![alt_text](relative_or_absolute_path "description")
     `
