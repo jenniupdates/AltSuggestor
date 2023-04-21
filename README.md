@@ -16,5 +16,5 @@ Here are some inline images without alt text:
 ![Night Lord](/images/nightlord.png "A screenshot of Night Lord")
 
 Here are some inline images with alt text:
-![Kain](/images/kain.jpg "A photo of Kain")
+![Kain](/images/kain.jpg "A photo of Kain" alt="Kain")
 ![Ice Light](/images/icelight.jpg "A photo of Ice Lightning" alt="Ice Lightning")
