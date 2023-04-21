@@ -5,16 +5,15 @@
 
 Welcome to my project!
 
-## Features
+## Image gallery
 
-### Image gallery
-
-Here are some inline images without alt text:
+### Here are some inline images without alt text:
 
 ![HoYoung](/images/hoyoung.png "A screenshot of Hoyoung")
 ![Phantom](/images/phantom.png "A screenshot of Phantom")
 ![Night Lord](/images/nightlord.png "A screenshot of Night Lord")
 
-Here are some inline images with alt text:
+### Here are some inline images with alt text:
+
 ![Kain](/images/kain.jpg "A photo of Kain" alt="Kain")
 ![Ice Light](/images/icelight.jpg "A photo of Ice Lightning" alt="Ice Lightning")
