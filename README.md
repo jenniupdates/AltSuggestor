@@ -9,7 +9,7 @@ Welcome to my project!
 
 ### Here are some inline images without alt text
 
-![](/images/hoyoung.png "A screenshot of Hoyoung")
+!(/images/hoyoung.png "A screenshot of Hoyoung")
 ![](/images/phantom.png "A screenshot of Phantom")
 ![](/images/nightlord.png "A screenshot of Night Lord")
 
