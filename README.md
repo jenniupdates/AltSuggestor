@@ -7,10 +7,11 @@
 1. The standard markdown format for inline images and alt text is as follows:
 ```
 ![alt_text](relative_or_absolute_path "description")
+```
     - ! to indicate an inline image
     - [] for alternate text, brackets must exist, but its contents can be empty
     - (path) is required, description is optional
-```
+
 
 ## Image gallery
 
