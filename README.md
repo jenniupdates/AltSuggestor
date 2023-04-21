@@ -14,5 +14,5 @@ Welcome to my project!
 ![Night Lord](/images/nightlord.png "A screenshot of Night Lord")
 
 ### Here are some inline images with alt text
-![Kain](/images/kain.png "A screenshot of Kain" alt="Kain")
-![Ice Light](/images/icelight.png "A screenshot of Ice Lightning" alt="Ice Lightning")
+![Kain](/images/kain.png "A screenshot of Kain" )
+![Ice Light](/images/icelight.png "A screenshot of Ice Lightning" )
