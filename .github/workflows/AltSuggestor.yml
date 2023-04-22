@@ -1,23 +1,38 @@
 name: Alt Text Suggestor
 
 on:
-  pull_request:
-    types: [opened, synchronize]
+  push:
+    branches: main
 
 jobs:
-  generate-caption:
+  generate:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.9'
-      - name: Install dependencies
-        run: pip3 install -r requirements.txt
-      - name: Check for inline images with no alt text and generate suggestions accordingly
-        run: python main.py
-        env:
-          AZURE_COGNITIVE_SERVICES_KEY: ${{ secrets.AZURE_COGNITIVE_SERVICES_KEY }}
-          AZURE_COGNITIVE_SERVICES_ENDPOINT: ${{ secrets.AZURE_COGNITIVE_SERVICES_ENDPOINT }}
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.9
+
+    - name: Install dependencies
+      run: pip3 install -r requirements.txt
+
+    - name: Run alt text checker and suggestor
+      run: python main.py
+
+    - name: Check for empty alt text suggestions
+      run: |
+        if [ $(echo "${{ steps.run.outputs.stdout }}" | wc -l) -eq 1 ]; then
+          echo "Alt text suggestions is empty. No further action is needed."
+          exit 0
+        else
+          echo "Alt text suggestions are available. Please update your images accordingly."
+          exit 1
+        fi
+      id: run
+      shell: bash
+      env:
+        PYTHONUNBUFFERED: 1

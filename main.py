@@ -138,5 +138,6 @@ if __name__ == '__main__':
     # print(missing_alt_text)
 
     alt_text_suggestions = suggest_alt_text(missing_alt_text)
+    
     for image_url, alt_text in alt_text_suggestions:
         print(f"Suggested alt text for '{image_url}' : {alt_text}")
