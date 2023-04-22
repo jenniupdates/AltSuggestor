@@ -50,3 +50,4 @@ Here are some inline images **without** alt text
 
 ![](/images/bigben.jpg "A screenshot of London's Big Ben")
 ![](/images/macbook.jpg "A picture of a Macbook")
+![](/images/milktea.jpg "A picture of a milktea")
