@@ -43,3 +43,10 @@ Here are some inline images **with** alt text
 Here, you can edit this section of the README.md to add your own inputs to test.
 This is to test future PR pre-merge checks or just predically checks.
 You have to indicate 1. the new markdown text in README.md and 2. insert the respective image into the images folder
+
+
+## Test Workflow
+Here are some inline images **without** alt text
+
+![](/images/bigben.jpg "A screenshot of London's Big Ben")
+![](/images/macbook.jpg "A picture of a Macbook")
