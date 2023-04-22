@@ -17,6 +17,10 @@ import matplotlib.pyplot as plt
 api_key = os.environ['AZURE_COGNITIVE_SERVICES_KEY']
 api_endpoint = os.environ['AZURE_COGNITIVE_SERVICES_ENDPOINT']
 
+# Set API key and endpoint from .env file
+# api_key = os.getenv('AZURE_COGNITIVE_SERVICES_KEY')
+# api_endpoint = os.getenv('AZURE_COGNITIVE_SERVICES_ENDPOINT')
+
 # Authenticate Computer Vision client
 credential = CognitiveServicesCredentials(api_key)
 client = ComputerVisionClient(api_endpoint, credential)
