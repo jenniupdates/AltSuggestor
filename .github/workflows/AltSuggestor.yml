@@ -18,10 +18,16 @@ jobs:
         python-version: 3.9
 
     - name: Install dependencies
-      run: pip3 install -r requirements.txt
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
 
-    - name: Run alt text checker and suggestor
-      run: python main.py
+    - name: Set up environment variables and Run alt text checker and suggestor
+      env:
+        AZURE_COGNITIVE_SERVICES_KEY: ${{ secrets.AZURE_COGNITIVE_SERVICES_KEY }}
+        AZURE_COGNITIVE_SERVICES_ENDPOINT: ${{ secrets.AZURE_COGNITIVE_SERVICES_ENDPOINT }}
+      run: |
+        python main.py
 
     - name: Check for empty alt text suggestions
       run: |

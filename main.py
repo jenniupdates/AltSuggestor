@@ -2,7 +2,7 @@ import os
 import io
 import markdown
 from bs4 import BeautifulSoup
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 
 from azure.cognitiveservices.vision.computervision import ComputerVisionClient
 from azure.cognitiveservices.vision.computervision.models import VisualFeatureTypes
@@ -11,10 +11,11 @@ from msrest.authentication import CognitiveServicesCredentials
 from PIL import Image, ImageDraw
 import matplotlib.pyplot as plt
 
-load_dotenv()
+# load_dotenv()
 
-api_key = os.getenv('AZURE_COGNITIVE_SERVICES_KEY')
-api_endpoint = os.getenv('AZURE_COGNITIVE_SERVICES_ENDPOINT')
+# Set the API key and endpoint from GitHub Secrets
+api_key = os.environ['AZURE_COGNITIVE_SERVICES_KEY']
+api_endpoint = os.environ['AZURE_COGNITIVE_SERVICES_ENDPOINT']
 
 # Authenticate Computer Vision client
 credential = CognitiveServicesCredentials(api_key)
@@ -138,6 +139,6 @@ if __name__ == '__main__':
     # print(missing_alt_text)
 
     alt_text_suggestions = suggest_alt_text(missing_alt_text)
-    
+
     for image_url, alt_text in alt_text_suggestions:
         print(f"Suggested alt text for '{image_url}' : {alt_text}")
