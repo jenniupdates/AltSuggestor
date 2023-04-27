@@ -29,7 +29,7 @@ jobs:
         env:  |
           AZURE_COGNITIVE_SERVICES_KEY: ${{ secrets.AZURE_COGNITIVE_SERVICES_KEY }}
           AZURE_COGNITIVE_SERVICES_ENDPOINT: ${{ secrets.AZURE_COGNITIVE_SERVICES_ENDPOINT }}
-        platform: linux/amd64
+        platform: linux/arm64/v8
         workdir: /app
         entrypoint: bash
         cmd: -c "python main-docker.py > /app/output.txt"
