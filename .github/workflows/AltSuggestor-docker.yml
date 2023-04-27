@@ -21,15 +21,7 @@ jobs:
         tags: 1.0
         context: .
         push: false
-
-    - name: Build container from image
-      uses: docker://yinshanz/alt_text_suggestor:1.0
-      with:
-        context: .
-        push: false
-        load: true
-        file: ./Dockerfile
-
+        
     - name: Run container
       uses: docker://yinshanz/alt_text_suggestor:1.0
       with: 
