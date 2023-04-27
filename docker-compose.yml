@@ -1,0 +1,12 @@
+version: "3.9"
+
+services:
+  alt_text_suggestor:
+    container_name: alt_text_suggestor
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    image: yinshanz/alt_text_suggestor:1.0
+    environment:
+      - AZURE_COGNITIVE_SERVICES_KEY=${AZURE_COGNITIVE_SERVICES_KEY}
+      - AZURE_COGNITIVE_SERVICES_ENDPOINT=${AZURE_COGNITIVE_SERVICES_ENDPOINT}
