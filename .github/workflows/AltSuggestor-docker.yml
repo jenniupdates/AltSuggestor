@@ -13,7 +13,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Pull docker image from docker hub
-      uses: docker/build-push-action@v2
+      uses: yinshanz/alt_text_suggestor:1.0
       with:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
@@ -23,15 +23,15 @@ jobs:
         push: false
 
     - name: Build container from image
-      uses: docker/build-push-action@v2
-        with:
-          context: .
-          push: false
-          load: true
-          file: ./Dockerfile
+      uses: yinshanz/alt_text_suggestor:1.0
+      with:
+        context: .
+        push: false
+        load: true
+        file: ./Dockerfile
 
     - name: Run container
-      uses: docker/run-action@v1
+      uses: yinshanz/alt_text_suggestor:1.0
       with: 
         image: yinshanz/alt_text_suggestor:1.0
         env:  |
