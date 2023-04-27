@@ -45,7 +45,7 @@ You have to:
 2. insert the respective image into the images folder
 
 
-## Test Workflow
+## Testing Workflow
 Here are some inline images **without** alt text
 
 ![](/images/bigben.jpg "A screenshot of London's Big Ben")
