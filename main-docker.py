@@ -10,16 +10,16 @@ from msrest.authentication import CognitiveServicesCredentials
 from PIL import Image, ImageDraw
 import matplotlib.pyplot as plt
 
-# from dotenv import load_dotenv
-# load_dotenv()
+from dotenv import load_dotenv
+load_dotenv()
 
 # Set the API key and endpoint from GitHub Secrets (for non-Docker)
-api_key = os.environ['AZURE_COGNITIVE_SERVICES_KEY']
-api_endpoint = os.environ['AZURE_COGNITIVE_SERVICES_ENDPOINT']
+# api_key = os.environ['AZURE_COGNITIVE_SERVICES_KEY']
+# api_endpoint = os.environ['AZURE_COGNITIVE_SERVICES_ENDPOINT']
 
 # Set API key and endpoint from .env file (for Docker or local)
-# api_key = os.getenv('AZURE_COGNITIVE_SERVICES_KEY')
-# api_endpoint = os.getenv('AZURE_COGNITIVE_SERVICES_ENDPOINT')
+api_key = os.getenv('AZURE_COGNITIVE_SERVICES_KEY')
+api_endpoint = os.getenv('AZURE_COGNITIVE_SERVICES_ENDPOINT')
 
 # Authenticate Computer Vision client
 credential = CognitiveServicesCredentials(api_key)
