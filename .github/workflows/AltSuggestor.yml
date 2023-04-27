@@ -1,11 +1,11 @@
 name: Alt Text Suggestor
 
 on:
-  push:
-    branches: main
+  pull_request:
+    branches: [main]
 
 jobs:
-  generate:
+  check_alt_text:
     runs-on: ubuntu-latest
 
     steps:
@@ -22,23 +22,19 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: Set up environment variables and Run alt text checker and suggestor
+    - name: Run alt text suggestor
       env:
         AZURE_COGNITIVE_SERVICES_KEY: ${{ secrets.AZURE_COGNITIVE_SERVICES_KEY }}
         AZURE_COGNITIVE_SERVICES_ENDPOINT: ${{ secrets.AZURE_COGNITIVE_SERVICES_ENDPOINT }}
       run: |
-        python main.py
+        python main.py | tee output.txt
 
-    - name: Check for empty alt text suggestions
+    - name: Check for main.py output (no output == all images good)
       run: |
-        if [ $(echo "${{ steps.run.outputs.stdout }}" | wc -l) -eq 1 ]; then
-          echo "Alt text suggestions is empty. No further action is needed."
-          exit 0
-        else
-          echo "Alt text suggestions are available. Please update your images accordingly."
+        if [ -s output.txt ]; then
+          echo "There are images with missing alt text in README.md"
+          cat output.txt
           exit 1
+        else
+          echo "All images have alt text, pull request will succeed"
         fi
-      id: run
-      shell: bash
-      env:
-        PYTHONUNBUFFERED: 1
