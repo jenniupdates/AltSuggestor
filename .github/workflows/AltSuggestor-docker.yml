@@ -32,13 +32,17 @@ jobs:
         platform: linux/amd64
         workdir: /app
         entrypoint: bash
-        cmd: -c "python main-docker.py" 
+        # cmd: -c "python main-docker.py" 
 
 
     - name: Check directories
       run: |
         ls
         
+
+    - name: Run file
+      run:
+        python main-docker.py
 
     - name: Check container output file (no output == all images good) (similar to one of the above steps)
       run: |
