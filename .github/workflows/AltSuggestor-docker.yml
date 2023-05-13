@@ -12,38 +12,31 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Pull docker image from docker hub
-      uses: yinshanz/alt_text_suggestor:1.0
-      with:
-        username: ${{ secrets.DOCKER_USERNAME }}
-        password: ${{ secrets.DOCKER_PASSWORD }}
-        repository: yinshanz/alt_text_suggestor
-        tags: 1.0
-        context: .
-        push: false
-
-    - name: Build container from image
-      uses: yinshanz/alt_text_suggestor:1.0
-      with:
-        context: .
-        push: false
-        load: true
-        file: ./Dockerfile
-
-    - name: Run container
-      uses: yinshanz/alt_text_suggestor:1.0
+    - name: Pull image from docker hub, build and run container and output to file
+      uses: docker://yinshanz/alt_text_suggestor:1.0
       with: 
         image: yinshanz/alt_text_suggestor:1.0
         env:  |
           AZURE_COGNITIVE_SERVICES_KEY: ${{ secrets.AZURE_COGNITIVE_SERVICES_KEY }}
           AZURE_COGNITIVE_SERVICES_ENDPOINT: ${{ secrets.AZURE_COGNITIVE_SERVICES_ENDPOINT }}
+        platform: linux/amd64
         workdir: /app
         entrypoint: bash
-        cmd: -c "python main-docker.py > /app/output.txt"
-
-    - name: Redirect container output to file
-      run: |
+        script: |
+          echo "Adding README.md file into Docker container"
+          cp README.md /app
         
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+
+    - name: Run file
+      env:  
+        AZURE_COGNITIVE_SERVICES_KEY: ${{ secrets.AZURE_COGNITIVE_SERVICES_KEY }}
+        AZURE_COGNITIVE_SERVICES_ENDPOINT: ${{ secrets.AZURE_COGNITIVE_SERVICES_ENDPOINT }}
+      run: |
+        python main-docker.py > output.txt
+      
     - name: Check container output file (no output == all images good) (similar to one of the above steps)
       run: |
         if [ -s output.txt ]; then

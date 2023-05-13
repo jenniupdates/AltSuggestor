@@ -2,6 +2,7 @@
 Markdown alt text suggestor - GitHub Action that can be enabled by maintainers to scan markdown documents looking for inline images missing alt text and suggesting them. 
 
 # Submission for Microsoft Code; Without Barriers Hackathon 2023
+Done by: Lim Yin Shan, ysimptstuff@gmail.com
 
 ## Assumptions
 1. The standard markdown format for inline images and alt text is as follows:
@@ -19,8 +20,15 @@ Markdown alt text suggestor - GitHub Action that can be enabled by maintainers t
 
 ## Running the AltSuggestor in your own repository
 1. You need to have an existing Azure Cognitive Service resource working and running (for the Computer Vision API)
-2. Clone this GitHub or download its contents and place it in your repository
-3. Edit your repository's README.md with inline images having no alt text. By the next push/pull request, you should see the AltSuggestor's effect.
+    - You are required to set this service up, without it there will be no alt text suggestions
+2. Clone this GitHub or download its contents and place it in your repository. There are 2 versions:
+    - If you want GitHub Actions to run using main.py directly, you need both main.py and requirements.txt    - If you want GitHub Actions to run using the docker version, you just need the AltSuggestor.yml in the workflow (note that docker version is not fully working yet, )
+3. You need certain secrets for the workflow to run smoothly. They are:
+    - AZURE_COGNITIVE_SERVICES_KEY (your own azure service, for both versions)
+    - AZURE_COGNITIVE_SERVICES_ENDPOINT (your own azure service, for both versions)
+    - DOCKER_USERNAME (your docker username, if you are using docker version)
+    - DOCKER_PASSWORD (your docker password, if you are using docker version)
+3. Edit your repository's README.md with inline images having no alt text. By the next push/pull request, you should see the AltSuggestor's effect taking place in GitHub Actions!
 <!-- 3. Edit the .env.example file to contain your Azure Cognitive Service resource key and rename the file to .env
 4. Install the dependent libraries and modules `pip3 install -r requirements.txt` -->
 <!-- 5. Add your own inputs following below's section and try merging branches or pushing the new changes to the main branch. -->
@@ -29,20 +37,29 @@ Markdown alt text suggestor - GitHub Action that can be enabled by maintainers t
 ## Trying out with your own image inputs
 Here, you can edit this section of the README.md to add your own inputs to test.
 This is to test future PR pre-merge checks or just predically checks.
+
+> This section is mainly for those who just want to try out the suggestor directly rather than seeing it work in Actions
+
 You have to: 
 1. add in the new markdown text in README.md containing the image and 
 2. insert the respective image into the images folder
 
 
-## Test Workflow
+## Testing Workflow
 Here are some inline images **without** alt text
 
-![](/images/bigben.jpg "A screenshot of London's Big Ben")
-![](/images/macbook.jpg "A picture of a Macbook")
-![](/images/milktea.jpg "A picture of a milktea")
+![BigBen](/images/bigben.jpg "A screenshot of London's Big Ben")
+![Macbook](/images/macbook.jpg "A picture of a Macbook")
+![BBT](/images/milktea.jpg "A picture of a milktea")
+![MBS](/images/mbs.jpeg "A screenshot of Marina Bay Sands")
 
 
-## Image gallery (for testing AltSuggestor)
+## Future Improvements
+1. Docker portion - reading docker output and reject/accept pull request accordingly
+2. More fine-tuned caption generator
+
+
+<!-- ## Image gallery (for testing AltSuggestor)
 
 Here are some inline images **without** alt text
 
@@ -53,7 +70,8 @@ Here are some inline images **without** alt text
 Here are some inline images **with** alt text
 
 ![IPv4](/images/ip.png "A screenshot explaining what is an IPv4")
-![Dog](/images/dog.jpeg "A screenshot of a dog")
+![Dog](/images/dog.jpeg "A screenshot of a dog") -->
 
 
 ## Credits and Acknowledgements
+

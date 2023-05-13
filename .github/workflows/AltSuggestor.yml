@@ -1,4 +1,4 @@
-name: Alt Text Suggestor
+name: Alt Text Suggestor (non-Docker)
 
 on:
   pull_request:
@@ -22,6 +22,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
+    # using main.py
     - name: Run alt text suggestor
       env:
         AZURE_COGNITIVE_SERVICES_KEY: ${{ secrets.AZURE_COGNITIVE_SERVICES_KEY }}
