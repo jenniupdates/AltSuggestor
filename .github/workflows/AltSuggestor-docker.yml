@@ -32,7 +32,7 @@ jobs:
         platform: linux/amd64
         workdir: /app
         entrypoint: bash
-        cmd: -c "python main-docker.py > tee /app/output.txt" 
+        cmd: -c "python main-docker.py" 
 
 
     - name: Check directories
