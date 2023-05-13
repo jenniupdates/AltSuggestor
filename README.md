@@ -46,7 +46,7 @@ You have to:
 
 
 ## Testing Workflow
-Here are some inline images **without** alt text
+Here are some inline images **with** alt text
 
 ![BigBen](/images/bigben.jpg "A screenshot of London's Big Ben")
 ![Macbook](/images/macbook.jpg "A picture of a Macbook")
