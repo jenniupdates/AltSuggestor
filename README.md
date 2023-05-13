@@ -38,25 +38,13 @@ Done by: Lim Yin Shan, ysimptstuff@gmail.com
 Here, you can edit this section of the README.md to add your own inputs to test.
 This is to test future PR pre-merge checks or just predically checks.
 
-> This section is mainly for those who just want to try out the suggestor directly rather than seeing it work in Actions
-
 You have to: 
 1. add in the new markdown text in README.md containing the image and 
-2. insert the respective image into the images folder
-
-
-## Testing Workflow
-Here are some inline images **with** alt text
-
-![BigBen](/images/bigben.jpg "A screenshot of London's Big Ben")
-![Macbook](/images/macbook.jpg "A picture of a Macbook")
-![BBT](/images/milktea.jpg "A picture of a milktea")
-![MBS](/images/mbs.jpeg "A screenshot of Marina Bay Sands")
+2. insert the respective image into the images folder (or if you're linking to an external image)
 
 
 ## Future Improvements
-1. Docker portion - reading docker output and reject/accept pull request accordingly
-2. More fine-tuned caption generator
+1. More fine-tuned caption generator (using OpenAI's DALL·E 2)
 
 
 <!-- ## Image gallery (for testing AltSuggestor)
@@ -65,6 +53,9 @@ Here are some inline images **without** alt text
 
 ![](/images/kain.png "A screenshot of Kain")
 ![](/images/mbs.jpeg "A screenshot of Marina Bay Sands")
+![](/images/bigben.jpg "A screenshot of London's Big Ben")
+![](/images/macbook.jpg "A picture of a Macbook")
+![](/images/milktea.jpg "A picture of a milktea")
 ![](/images/alt-text.png "A screenshot explaining what is alternate text")
 
 Here are some inline images **with** alt text
