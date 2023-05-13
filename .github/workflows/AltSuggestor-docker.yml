@@ -33,7 +33,11 @@ jobs:
         workdir: /app
         entrypoint: bash
         cmd: -c "python main-docker.py > tee /app/output.txt" 
-        
+
+
+    - name: Read docker output
+      run: |
+        cat /app/output.txt
 
     - name: Check container output file (no output == all images good) (similar to one of the above steps)
       run: |
