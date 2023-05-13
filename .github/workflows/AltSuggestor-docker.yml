@@ -32,20 +32,18 @@ jobs:
         platform: linux/amd64
         workdir: /app
         entrypoint: bash
-        run: |
-          pip install -r requirements.txt
-          python main-docker.py
+        # run: |
+        #   pip install -r requirements.txt
+        #   python main-docker.py
         # cmd: -c "python main-docker.py" 
-
-
-    - name: Check directories
-      run: |
-        ls
         
+    - name: Run file
+      run: |
+        pip install -r requirements.txt
 
-    # - name: Run file
-    #   run:
-    #     python main-docker.py
+    - name: Install dependencies
+      run: |
+        python main-docker.py > tee output.txt
 
     - name: Check container output file (no output == all images good) (similar to one of the above steps)
       run: |
