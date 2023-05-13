@@ -42,7 +42,7 @@ jobs:
         AZURE_COGNITIVE_SERVICES_KEY: ${{ secrets.AZURE_COGNITIVE_SERVICES_KEY }}
         AZURE_COGNITIVE_SERVICES_ENDPOINT: ${{ secrets.AZURE_COGNITIVE_SERVICES_ENDPOINT }}
       run: |
-        python main-docker.py > tee output.txt
+        python main-docker.py > output.txt
       
     - name: Check directories
       run: |
