@@ -32,10 +32,6 @@ jobs:
         platform: linux/amd64
         workdir: /app
         entrypoint: bash
-        # run: |
-        #   pip install -r requirements.txt
-        #   python main-docker.py
-        # cmd: -c "python main-docker.py" 
         
     - name: Install dependencies
       run: |
@@ -47,6 +43,14 @@ jobs:
         AZURE_COGNITIVE_SERVICES_ENDPOINT: ${{ secrets.AZURE_COGNITIVE_SERVICES_ENDPOINT }}
       run: |
         python main-docker.py > tee output.txt
+      
+    - name: Check directories
+      run: |
+        ls
+
+    - name: Check output file
+      run: |
+        cat output.txt
 
     - name: Check container output file (no output == all images good) (similar to one of the above steps)
       run: |
