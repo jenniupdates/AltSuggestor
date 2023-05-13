@@ -37,11 +37,14 @@ jobs:
         #   python main-docker.py
         # cmd: -c "python main-docker.py" 
         
-    - name: Run file
+    - name: Install dependencies
       run: |
         pip install -r requirements.txt
 
-    - name: Install dependencies
+    - name: Run file
+      env:  |
+          AZURE_COGNITIVE_SERVICES_KEY: ${{ secrets.AZURE_COGNITIVE_SERVICES_KEY }}
+          AZURE_COGNITIVE_SERVICES_ENDPOINT: ${{ secrets.AZURE_COGNITIVE_SERVICES_ENDPOINT }}
       run: |
         python main-docker.py > tee output.txt
 
