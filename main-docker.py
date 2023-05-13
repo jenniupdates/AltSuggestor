@@ -140,9 +140,11 @@ if __name__ == '__main__':
         markdown_text = f.read()
 
     missing_alt_text = find_missing_alt_text(markdown_text)
-    print("images with missing alt text:", missing_alt_text, "\n")
+    if missing_alt_text != []:
+        print("images with missing alt text:", missing_alt_text, "\n")
 
-    alt_text_suggestions = suggest_alt_text(missing_alt_text)
+        alt_text_suggestions = suggest_alt_text(missing_alt_text)
 
-    for image_url, alt_text in alt_text_suggestions:
-        print(f"Suggested alt text for '{image_url}' : {alt_text}")
+        for image_url, alt_text in alt_text_suggestions:
+            print(f"Suggested alt text for '{image_url}' : {alt_text}")
+

@@ -6,7 +6,7 @@ COPY ./requirements.txt ./
 
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY ./main-docker.py ./README.md ./
+COPY ./main-docker.py ./
 
 ADD images ./images 
 

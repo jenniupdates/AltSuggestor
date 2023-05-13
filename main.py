@@ -10,16 +10,16 @@ from msrest.authentication import CognitiveServicesCredentials
 from PIL import Image, ImageDraw
 import matplotlib.pyplot as plt
 
-# from dotenv import load_dotenv
-# load_dotenv()
+from dotenv import load_dotenv
+load_dotenv()
 
 # Set the API key and endpoint from GitHub Secrets (for non-Docker)
-api_key = os.environ['AZURE_COGNITIVE_SERVICES_KEY']
-api_endpoint = os.environ['AZURE_COGNITIVE_SERVICES_ENDPOINT']
+# api_key = os.environ['AZURE_COGNITIVE_SERVICES_KEY']
+# api_endpoint = os.environ['AZURE_COGNITIVE_SERVICES_ENDPOINT']
 
 # Set API key and endpoint from .env file (for Docker or local)
-# api_key = os.getenv('AZURE_COGNITIVE_SERVICES_KEY')
-# api_endpoint = os.getenv('AZURE_COGNITIVE_SERVICES_ENDPOINT')
+api_key = os.getenv('AZURE_COGNITIVE_SERVICES_KEY')
+api_endpoint = os.getenv('AZURE_COGNITIVE_SERVICES_ENDPOINT')
 
 # Authenticate Computer Vision client
 credential = CognitiveServicesCredentials(api_key)
@@ -140,9 +140,10 @@ if __name__ == '__main__':
         markdown_text = f.read()
 
     missing_alt_text = find_missing_alt_text(markdown_text)
-    print("images with missing alt text:", missing_alt_text, "\n")
+    if missing_alt_text != []:
+        print("images with missing alt text:", missing_alt_text, "\n")
 
-    alt_text_suggestions = suggest_alt_text(missing_alt_text)
+        alt_text_suggestions = suggest_alt_text(missing_alt_text)
 
-    for image_url, alt_text in alt_text_suggestions:
-        print(f"Suggested alt text for '{image_url}' : {alt_text}")
+        for image_url, alt_text in alt_text_suggestions:
+            print(f"Suggested alt text for '{image_url}' : {alt_text}")

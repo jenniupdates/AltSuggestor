@@ -12,16 +12,6 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    # - name: Pull docker image from docker hub
-    #   uses: docker://yinshanz/alt_text_suggestor:1.0
-      # with:
-      #   username: ${{ secrets.DOCKER_USERNAME }}
-      #   password: ${{ secrets.DOCKER_PASSWORD }}
-      #   repository: yinshanz/alt_text_suggestor
-      #   tags: 1.0
-      #   context: .
-      #   push: false
-
     - name: Pull image from docker hub, build and run container and output to file
       uses: docker://yinshanz/alt_text_suggestor:1.0
       with: 
@@ -32,6 +22,9 @@ jobs:
         platform: linux/amd64
         workdir: /app
         entrypoint: bash
+        script: |
+          echo "Adding README.md file into Docker container"
+          cp README.md /app
         
     - name: Install dependencies
       run: |
@@ -47,10 +40,6 @@ jobs:
     - name: Check directories
       run: |
         ls
-
-    - name: Check output file
-      run: |
-        cat output.txt
 
     - name: Check container output file (no output == all images good) (similar to one of the above steps)
       run: |
