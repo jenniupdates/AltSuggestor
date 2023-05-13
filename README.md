@@ -48,10 +48,10 @@ You have to:
 ## Testing Workflow
 Here are some inline images **without** alt text
 
-![](/images/bigben.jpg "A screenshot of London's Big Ben")
-![](/images/macbook.jpg "A picture of a Macbook")
-![](/images/milktea.jpg "A picture of a milktea")
-![](/images/mbs.jpeg "A screenshot of Marina Bay Sands")
+![BigBen](/images/bigben.jpg "A screenshot of London's Big Ben")
+![Macbook](/images/macbook.jpg "A picture of a Macbook")
+![BBT](/images/milktea.jpg "A picture of a milktea")
+![MBS](/images/mbs.jpeg "A screenshot of Marina Bay Sands")
 
 
 ## Future Improvements

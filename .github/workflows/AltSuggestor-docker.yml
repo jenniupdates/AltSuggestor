@@ -37,10 +37,6 @@ jobs:
       run: |
         python main-docker.py > output.txt
       
-    - name: Check directories
-      run: |
-        ls
-
     - name: Check container output file (no output == all images good) (similar to one of the above steps)
       run: |
         if [ -s output.txt ]; then
