@@ -10,4 +10,6 @@ services:
     environment:
       - AZURE_COGNITIVE_SERVICES_KEY=${AZURE_COGNITIVE_SERVICES_KEY}
       - AZURE_COGNITIVE_SERVICES_ENDPOINT=${AZURE_COGNITIVE_SERVICES_ENDPOINT}
-    platform: linux/arm64/v8
+    platform: linux/amd64
+
+# docker-compose up --build: force build
