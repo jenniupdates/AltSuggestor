@@ -42,7 +42,7 @@ jobs:
         pip install -r requirements.txt
 
     - name: Run file
-      env:  |
+      env:  
         AZURE_COGNITIVE_SERVICES_KEY: ${{ secrets.AZURE_COGNITIVE_SERVICES_KEY }}
         AZURE_COGNITIVE_SERVICES_ENDPOINT: ${{ secrets.AZURE_COGNITIVE_SERVICES_ENDPOINT }}
       run: |
