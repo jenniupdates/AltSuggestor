@@ -1,7 +1,7 @@
 # AltSuggestor
 AltSuggestor is a simple yet game-changing and automated Markdown alt text suggestor. With AltSuggestor, you can now enhance both **social inclusiveness and web accessibility** of your project.
 
-# Description
+## Description
 AltSuggestor consists of a GitHub Action that automates the reading of your project's README.md file, highlights inline images with no alt text and suggests the relevant alt text (alternate text) for the respective images. 
 
 With alt text, a visually impaired user or someone who is otherwise unable to view the images on the page can now read information about the images. Furthermore, alt text provides better image context/description to search engine crawlers, helping them to index and rank an image properly in image search, improving search engine optimisation (SEO). In addition, if an image file is unable to load, alt text will be displayed in its place. 
@@ -46,13 +46,13 @@ Done by: Lim Yin Shan
     - delete the cloned/downloaded README.md and make sure your own project's README.md is in the same directory as the cloned/downloaded files
     - do not touch any of the other cloned/downloaded files
 3. Create two GitHub repository secret so that the GitHub Action can retrieve the keys from:
-    - AZURE_COGNITIVE_SERVICES_ENDPOINT=<your_azure_cognitive_service_endpoint>
-    - AZURE_COGNITIVE_SERVICES_KEY=<your_azure_cognitive_service_key> (either one of the two)
+    - **AZURE_COGNITIVE_SERVICES_ENDPOINT**=<your_azure_cognitive_service_endpoint>
+    - **AZURE_COGNITIVE_SERVICES_KEY**=<your_azure_cognitive_service_key> (either one of the two)
 4. Push your new commits to the new branch.
 5. Create a pull request to merge your new branch with your main branch.
     - after creation, it should run the AltSuggestor Action:
-        - if all your README.md's images have alt text, it would pass the check and you can proceed to merging the two branches
-        - if some of your README.md's images DO NOT HAVE alt text, it would fail the status check
+        - if all your README.md's images **have alt text**, it would pass the check and you can proceed to merging the two branches
+        - if some of your README.md's images **DO NOT HAVE alt text**, it would fail the status check
             - click "details" to see why the check failed
             - click on the job named "Reading output file", it would tell you which image did not have alt text as well as the suggested image caption
             - edit your README.md accordingly and push the new updates to the branch
