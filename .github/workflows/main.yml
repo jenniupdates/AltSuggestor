@@ -1,0 +1,36 @@
+name: Alt Text Suggestor
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  check_alt_text:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+        
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+
+    - name: Run file and save output to file
+      env:  
+        AZURE_COGNITIVE_SERVICES_KEY: ${{ secrets.AZURE_COGNITIVE_SERVICES_KEY }}
+        AZURE_COGNITIVE_SERVICES_ENDPOINT: ${{ secrets.AZURE_COGNITIVE_SERVICES_ENDPOINT }}
+      run: |
+        python main.py > output.txt
+      
+    - name: Reading output file
+      run: |
+        if [ -s output.txt ]; then
+          echo ""
+          echo "There are images with missing alt text in README.md!"
+          cat output.txt
+          exit 1
+        else
+          echo "All images have alt text, pull request will succeed"
+        fi
+
