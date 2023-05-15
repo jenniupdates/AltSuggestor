@@ -82,3 +82,4 @@ Here are some inline images **with** alt text
 
 ![Maplestory's Kain Character](/images/kain.png "A screenshot of Kain")
 ![A happy dog](/images/dog.jpeg "A screenshot of a dog")
+
