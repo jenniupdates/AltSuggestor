@@ -1,5 +1,7 @@
 # AltSuggestor
-AltSuggestor is a simple yet game-changing and automated Markdown alt text suggestor. With AltSuggestor, you can now enhance both **social inclusiveness and web accessibility** of your project.
+AltSuggestor is a simple yet game-changing and automated Markdown alt text suggestor. With AltSuggestor, you can now enhance both **social inclusiveness and web accessibility** of your project. 
+
+It scans through your project's README.md file, detects inline images that do not contain alt text and suggests them accordingly.
 
 ## Description
 AltSuggestor consists of a GitHub Action that automates the reading of your project's README.md file, highlights inline images with no alt text and suggests the relevant alt text (alternate text) for the respective images. 
