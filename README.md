@@ -70,7 +70,7 @@ video to be inserted here
 why alt text suggestor - https://moz.com/learn/seo/alt-text
 
 ## Image gallery (for testing AltSuggestor)
-
+<!-- 
 Here are some inline images **without** alt text
 
 ![](/images/mbs.jpeg "A screenshot of Marina Bay Sands")
@@ -81,5 +81,5 @@ Here are some inline images **without** alt text
 Here are some inline images **with** alt text
 
 ![Maplestory's Kain Character](/images/kain.png "A screenshot of Kain")
-![A happy dog](/images/dog.jpeg "A screenshot of a dog")
+![A happy dog](/images/dog.jpeg "A screenshot of a dog") -->
 
