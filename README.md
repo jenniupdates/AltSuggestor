@@ -70,6 +70,7 @@ video to be inserted here
 why alt text suggestor - https://moz.com/learn/seo/alt-text
 
 ## Image gallery (for testing AltSuggestor)
+![](/images/mbs.jpeg "A screenshot of Marina Bay Sands")
 <!-- 
 Here are some inline images **without** alt text
 
