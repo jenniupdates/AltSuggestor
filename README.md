@@ -64,7 +64,7 @@ Done by: Lim Yin Shan
 video to be inserted here
 
 ## Future Improvements
-1. More fine-tuned caption generator
+1. More fine-tuned caption generator.
 
 ## Credits and Acknowledgements
 why alt text suggestor - https://moz.com/learn/seo/alt-text
